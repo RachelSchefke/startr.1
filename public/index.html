@@ -10,28 +10,12 @@
 
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
 
-		<script type="text/javascript">
-	        var app = angular.module('MyApp', [])
-	        app.controller('MyController', function ($scope) {
-	            //This will hide the DIV by default.
-	            $scope.IsVisible = false;
-
-	            $scope.ShowHide = function () {
-	                //If DIV is visible it will be hidden and vice versa.
-	                $scope.IsVisibleTravel = $scope.ShowTravelKeys;
-	                $scope.IsVisibleSports = $scope.ShowSportsKeys;
-	                $scope.IsVisibleFinance = $scope.ShowFinanceKeys;
-	                $scope.IsVisibleFood = $scope.ShowFoodKeys;
-	                $scope.IsVisibleShopping = $scope.ShowShoppingKeys;
-	            }
-
-	        });
-	    </script>
+		<script src="script.js"></script>
 	</head>
 
 	<body>
-		
 
 		<div class="container" ng-app="MyApp" ng-controller="MyController">
 			<img src="startrLogoTake2transparent.png" alt="logo" align="middle">
@@ -88,7 +72,6 @@
 				</div>
 
 				<button type="submit" class="btn btn-default">Submit</button>
-
 			</form>	
 		</div>
 	</body>
