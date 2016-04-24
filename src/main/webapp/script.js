@@ -58,29 +58,61 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 .controller('formController', function($scope) {
     
     // we will store all of our form data in this object
-    $scope.formData = {};
-    $scope.audience = {};
-    $scope.category = {};
-    $scope.keywords = {};
-    
-    $scope.avatarData = [{
-    id: "avatars:svg-1",
-    title: 'avatar 1',
-    value: 'avatar-1'
-    },{
-    id: "avatars:svg-2",
-    title: 'avatar 2',
-    value: 'avatar-2'
-    },{
-    id: "avatars:svg-3",
-    title: 'avatar 3',
-    value: 'avatar-3'
+    $scope.audience = {"kids":false,"teens":false,"adults":false,"elderly":false};
+    $scope.category = {"travel":false,"fitness":false,"social":false,"productivity":false,"media":false,"finance":false,"shopping":false,"education":false};
+    $scope.keywords = {"trasportation":false,"lodging":false,"attractions":false,"running":false,"diet":false,"workout":false,"chat":false,"professional":false,"dating":false,"note":false,"list":false,"calendar":false,"banking":false,"investments":false,"budge":false,"clothing":false,"home":false,"electronics":false,"music":false,"video":false,"photo":false,"study":false,"learn":false,"reference":false};
+    $scope.comments = "";
+    $scope.SelectedLogo = 0;
+
+    $scope.logo = [{
+        id: "avatars:svg-1",
+        title: 'avatar 1',
+        value: 'avatar-1'
+        },{
+        id: "avatars:svg-2",
+        title: 'avatar 2',
+        value: 'avatar-2'
+        },{
+        id: "avatars:svg-3",
+        title: 'avatar 3',
+        value: 'avatar-3'
     }];
-    
+
+    $scope.completed = function (obj) {
+        var keys = Object.keys(obj);
+        return keys.map(function (key) {
+            return obj[key];
+        }).filter(function (value) {
+            return value;
+        }).length > 0;
+    };
+
     // function to process the form
     $scope.processForm = function() {
-        alert('awesome!');  
+        alert('Submitted');  
     };
+
+    $scope.serverResponse = [
+    {
+        "_font": "font name",
+        "_size": "small",
+        "_image": "map.png",
+        "_title": "startr"
+    }
+    ];
+
+    $scope.styles = $scope.serverResponse.map(function (value) {
+        var sizes = {
+            "small": 12,
+            "normal": 20,
+            "big": 32
+        };
+
+        return {
+            "font-family" : value._font,
+            "font-size" : sizes[value._size] + "px"
+        };
+    });
     
 });
 
