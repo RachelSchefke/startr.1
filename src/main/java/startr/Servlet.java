@@ -22,14 +22,13 @@ public class Servlet extends spark.servlet.SparkFilter implements spark.servlet.
 
 	@Override
 	public void init() {
-				
-		/*
+		
 		get("/", (req, res) -> {
-			 res.redirect("form-target.html");
-			 res.type("text/html");
+			 res.redirect("index.html");
+			 //res.type("text/html");
 			 return res;
 			});
-			*/ 
+			
 		
 		Gson gson = new Gson();
 
