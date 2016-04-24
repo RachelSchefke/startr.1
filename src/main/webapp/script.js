@@ -64,20 +64,6 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
     $scope.comments = "";
     $scope.SelectedLogo = 0;
 
-    $scope.logo = [{
-        id: "avatars:svg-1",
-        title: 'avatar 1',
-        value: 'avatar-1'
-        },{
-        id: "avatars:svg-2",
-        title: 'avatar 2',
-        value: 'avatar-2'
-        },{
-        id: "avatars:svg-3",
-        title: 'avatar 3',
-        value: 'avatar-3'
-    }];
-
     $scope.completed = function (obj) {
         var keys = Object.keys(obj);
         return keys.map(function (key) {
@@ -87,6 +73,10 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
         }).length > 0;
     };
 
+    $scope.nothing = function () {
+
+    };
+
     // function to process the form
     $scope.processForm = function() {
         alert('Submitted');  
@@ -94,8 +84,8 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 
     $scope.serverResponse = [
     {
-        "_font": "font name",
-        "_size": "small",
+        "_font": "Chewy",
+        "_size": "big",
         "_image": "map.png",
         "_title": "startr"
     }
@@ -103,9 +93,9 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 
     $scope.styles = $scope.serverResponse.map(function (value) {
         var sizes = {
-            "small": 12,
-            "normal": 20,
-            "big": 32
+            "small": 30,
+            "normal": 40,
+            "big": 60
         };
 
         return {
