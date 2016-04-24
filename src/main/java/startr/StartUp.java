@@ -1,4 +1,5 @@
 package startr;
+import java.util.List;
 import java.util.ArrayList;
 import java.math.*;
 import java.util.Map;
@@ -14,7 +15,7 @@ public class StartUp {
 	public ArrayList<String> color = new ArrayList<String>();
 
 	
-	public StartUp(ArrayList<String> _audience, ArrayList<String> _category, ArrayList<String> _keywords) {
+	public StartUp(List<String> _audience, List<String> _category, List<String> _keywords) {
 
 		// analyze data
 		analyzeAudience(_audience);
@@ -23,7 +24,7 @@ public class StartUp {
 	}
 
 	
-	public void analyzeAudience(ArrayList<String> _audience) {
+	public void analyzeAudience(List<String> _audience) {
 		size.add("normal");
 		font.add("Homenaje");
 		font.add("Poiret One");
@@ -59,7 +60,7 @@ public class StartUp {
 		}
 	}
 	
-	public void analyzeCategoryAndWords(ArrayList<String> _category, ArrayList<String> _words) {
+	public void analyzeCategoryAndWords(List<String> _category, List<String> _words) {
 		
 		if(_category.contains("Travel")) {
 			// add fonts
