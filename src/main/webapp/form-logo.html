@@ -1,0 +1,16 @@
+<label>Select a logo</label>
+<div class="form-group">
+    <md-radio-group ng-model="data.group3">
+      <md-radio-button ng-repeat="it in avatarData"
+                       ng-value="it.value"
+                       aria-label="{{it.title}}">
+          <md-icon md-svg-icon="{{it.id}}"></md-icon>
+      </md-radio-button>
+    </md-radio-group>
+</div>
+
+<div class="form-group row">
+<div class="col-xs-6 col-xs-offset-3">
+    <button type="submit" class="btn btn-block btn-primary">Submit</button>
+</div>
+</div>

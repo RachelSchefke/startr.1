@@ -1,0 +1,200 @@
+<label>Choose keywords for each category</label>
+<fieldset ng-show="category.travel">
+  <legend>Travel</legend>
+    <div class="form-group">
+         <div class="checkbox">
+           <label>
+               <input type="checkbox" ng-model="keywords.trasportation" value="transportation">
+               Transportation
+           </label>
+         </div>
+         <div class="checkbox">
+           <label>
+               <input type="checkbox" ng-model="keywords.lodging" value="lodging">
+               Lodging
+           </label>
+         </div>
+         <div class="checkbox">
+           <label>
+               <input type="checkbox" ng-model="keywords.attractions" value="attractions">
+               Attractions
+           </label>
+         </div>
+    </div>
+</fieldset>
+
+<fieldset ng-show="category.fitness">
+  <legend>Fitness</legend>
+    <div class="form-group">
+         <div class="checkbox">
+           <label>
+               <input type="checkbox" ng-model="keywords.running" value="running">
+               Running
+           </label>
+         </div>
+         <div class="checkbox">
+           <label>
+               <input type="checkbox" ng-model="keywords.diet" value="diet">
+               Diet
+           </label>
+         </div>
+         <div class="checkbox">
+           <label>
+               <input type="checkbox" ng-model="keywords.workout" value="workout">
+               Workout
+           </label>
+         </div>
+    </div>
+</fieldset>
+
+<fieldset ng-show="category.social">
+  <legend>Social</legend>
+    <div class="form-group">
+         <div class="checkbox">
+           <label>
+               <input type="checkbox" ng-model="keywords.chat" value="chat">
+               Chat
+           </label>
+         </div>
+         <div class="checkbox">
+           <label>
+               <input type="checkbox" ng-model="keywords.professional" value="professional">
+               Professional
+           </label>
+         </div>
+         <div class="checkbox">
+           <label>
+               <input type="checkbox" ng-model="keywords.dating" value="dating">
+               Dating
+           </label>
+         </div>
+    </div>
+</fieldset>
+
+<fieldset ng-show="category.productivity">
+  <legend>Productivity</legend>
+    <div class="form-group">
+         <div class="checkbox">
+           <label>
+               <input type="checkbox" ng-model="keywords.note" value="note">
+               Note
+           </label>
+         </div>
+         <div class="checkbox">
+           <label>
+               <input type="checkbox" ng-model="keywords.list" value="list">
+               List
+           </label>
+         </div>
+         <div class="checkbox">
+           <label>
+               <input type="checkbox" ng-model="keywords.calendar" value="calendar">
+               Calendar
+           </label>
+         </div>
+    </div>
+</fieldset>
+
+<fieldset ng-show="category.finance">
+  <legend>Finanace</legend>
+    <div class="form-group">
+         <div class="checkbox">
+           <label>
+               <input type="checkbox" ng-model="keywords.banking" value="banking">
+               Banking
+           </label>
+         </div>
+         <div class="checkbox">
+           <label>
+               <input type="checkbox" ng-model="keywords.investments" value="investments">
+               Investments
+           </label>
+         </div>
+         <div class="checkbox">
+           <label>
+               <input type="checkbox" ng-model="keywords.budge" value="budget">
+               Budget
+           </label>
+         </div>
+    </div>
+</fieldset>
+
+<fieldset ng-show="category.shopping">
+  <legend>Shopping</legend>
+    <div class="form-group">
+         <div class="checkbox">
+           <label>
+               <input type="checkbox" ng-model="keywords.clothing" value="clothing">
+               Clothing/Acessories
+           </label>
+         </div>
+         <div class="checkbox">
+           <label>
+               <input type="checkbox" ng-model="keywords.home" value="home">
+               Home Goods
+           </label>
+         </div>
+         <div class="checkbox">
+           <label>
+               <input type="checkbox" ng-model="keywords.electronics" value="electronics">
+               Electronics
+           </label>
+         </div>
+    </div>
+</fieldset>
+
+<fieldset ng-show="category.media">
+  <legend>Media</legend>
+    <div class="form-group">
+         <div class="checkbox">
+           <label>
+               <input type="checkbox" ng-model="keywords.music" value="music">
+               Music
+           </label>
+         </div>
+         <div class="checkbox">
+           <label>
+               <input type="checkbox" ng-model="keywords.video" value="video">
+               Video
+           </label>
+         </div>
+         <div class="checkbox">
+           <label>
+               <input type="checkbox" ng-model="keywords.photo" value="photo">
+               Photo
+           </label>
+         </div>
+    </div>
+</fieldset>
+
+<fieldset ng-show="category.education">
+  <legend>Education</legend>
+    <div class="form-group">
+         <div class="checkbox">
+           <label>
+               <input type="checkbox" ng-model="keywords.study" value="study">
+               Study
+           </label>
+         </div>
+         <div class="checkbox">
+           <label>
+               <input type="checkbox" ng-model="keywords.learn" value="learn">
+               Learn
+           </label>
+         </div>
+         <div class="checkbox">
+           <label>
+               <input type="checkbox" ng-model="keywords.reference" value="reference">
+               Reference
+           </label>
+         </div>
+    </div>
+</fieldset>
+
+<div class="form-group row">
+<div class="col-xs-6 col-xs-offset-3">
+    <a ui-sref="form.comments" class="btn btn-block btn-default">
+    Next <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </a>
+</div>
+</div>
