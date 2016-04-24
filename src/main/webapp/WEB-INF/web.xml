@@ -7,7 +7,7 @@
 
 	<filter>
 		<filter-name>SparkFilter</filter-name>
-		<filter-class>spark.servlet.SparkFilter</filter-class>
+		<filter-class>startr.Servlet</filter-class>
 		<init-param>
 			<param-name>applicationClass</param-name>
 			<param-value>startr.Servlet</param-value>
