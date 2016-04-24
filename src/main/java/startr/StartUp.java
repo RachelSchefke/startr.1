@@ -1,5 +1,8 @@
 package startr;
 import java.util.ArrayList;
+import java.math.*;
+import java.util.Map;
+import java.lang.Object;
 public class StartUp {
 	
 	// variables
@@ -18,6 +21,7 @@ public class StartUp {
 		analyzeCategoryAndWords(_category, _keywords);
 		
 	}
+
 	
 	public static void analyzeAudience(ArrayList<String> _audience) {
 		size.add("normal");
@@ -297,7 +301,86 @@ public class StartUp {
 		}
 	}
 	
-	public void generate() {
+	public static class Logo {
+		public String _font;
+		public String _size;
+		public String _image;
+		public String _title;
 		
+		public Logo(String _f, String _s, String _i, String _t) {
+			_font = _f;
+			_size = _s;
+			_image = _i;
+			_title = _t;
+		}
 	}
+	
+	public static Logo generate() {
+		
+		// pick font
+		int font_ = (int) (Math.random() * font.size());
+		
+		// pick size
+		int size_ = (int) (Math.random() * size.size());
+		
+		// pick image
+		int image_ = (int) (Math.random() * image.size());
+		
+		// choice
+		int random = (int) (Math.random() * 3);
+		System.out.println(random);
+		
+		int word1 = (int) (Math.random() * words.size());
+		int word2 = (int) (Math.random() * words.size());
+		
+		String title = "";
+		
+		if(random == 0) {
+			// ending word
+			String [] endings = {"ster", "ify", ".it", ".io", "ly", ".me", "fy", "bit"};
+			int end = (int) (Math.random() * endings.length);
+			title = words.get(word1) + endings[end];
+		}
+		else if(random == 1) {
+			// word manipulation
+			String s = words.get(word1);
+			String s2 = words.get(word2);
+			if(s.contains("i")) {
+				s.replace('i','y');
+				title = s;
+			}
+			else if (s2.contains("i")){
+				s.replace('i','y');
+				title = s;
+			}
+			else {
+				// put text in the beginning
+				String [] start = {"e", "i", ".", "//"};
+				int e = (int) (Math.random() * start.length);
+				title = start[e] + words.get(word1);
+			}
+		}
+		else if(random == 2) {
+			// 2 words
+			int r = (int) (Math.random() * 2);
+			if(r == 0) {
+				// plus
+				title = words.get(word1) + "+" + words.get(word2);
+			}
+			else if(r == 1) {
+				// no space
+				title = words.get(word1) + words.get(word2);
+			}
+			else {
+				// dot
+				title = words.get(word1) + "." + words.get(word2);
+			}
+		}
+		
+		Logo l = new Logo(font.get(font_), size.get(size_), image.get(image_), title);
+		
+		
+		return l;
+	}
+	
 }
