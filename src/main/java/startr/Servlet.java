@@ -51,11 +51,14 @@ public class Servlet extends spark.servlet.SparkFilter implements spark.servlet.
 	
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
-        String requestUrl = ((HttpServletRequest) req).getRequestURI().toString();
+        
+		String requestUrl = ((HttpServletRequest) req).getRequestURI().toString();
 		
 		Map<String, String> mimeMapping = new HashMap<>();
-        mimeMapping.put(".css","text/css");
+        
+		mimeMapping.put(".css","text/css");
         mimeMapping.put(".js","text/javascript");
+        mimeMapping.put("/", "text/html");
 
         for(Map.Entry<String,String> entry : mimeMapping.entrySet())
         {
@@ -64,6 +67,7 @@ public class Servlet extends spark.servlet.SparkFilter implements spark.servlet.
                 ((HttpServletResponse) res).setHeader("Content-Type",entry.getValue());
             }
         }
+        
         super.doFilter(req, res, chain);
 	}
 
