@@ -1,12 +1,19 @@
 <label>Select a logo</label>
-<div class="form-group">
-    <md-radio-group ng-model="data.group3">
+<div class="form-group" ng-repeat="logo in serverResponse">
+<!--     <md-radio-group ng-model="data.group3">
       <md-radio-button ng-repeat="it in avatarData"
                        ng-value="it.value"
                        aria-label="{{it.title}}">
           <md-icon md-svg-icon="{{it.id}}"></md-icon>
       </md-radio-button>
-    </md-radio-group>
+    </md-radio-group> -->
+    <input type="radio" name="logo" ng-value="{{$index}}" ng-model="SelectedLogo">
+    <label for "logo">
+    	<p><img ng-src="/images/{{logo._image}}">
+    		<span ng-style="styles[$index]">{{logo._title}}</span>
+    	</p>
+    </label>
+
 </div>
 
 <div class="form-group row">
