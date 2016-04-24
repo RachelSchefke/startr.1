@@ -6,12 +6,12 @@ import java.lang.Object;
 public class StartUp {
 	
 	// variables
-	public static ArrayList<String> font = new ArrayList<String>();
+	public ArrayList<String> font = new ArrayList<String>();
 	// small, normal, big
-	public static ArrayList<String> size = new ArrayList<String>();
-	public static ArrayList<String> words = new ArrayList<String>();
-	public static ArrayList<String> image = new ArrayList<String>();
-	public static ArrayList<String> color = new ArrayList<String>();
+	public ArrayList<String> size = new ArrayList<String>();
+	public ArrayList<String> words = new ArrayList<String>();
+	public ArrayList<String> image = new ArrayList<String>();
+	public ArrayList<String> color = new ArrayList<String>();
 
 	
 	public StartUp(ArrayList<String> _audience, ArrayList<String> _category, ArrayList<String> _keywords) {
@@ -23,7 +23,7 @@ public class StartUp {
 	}
 
 	
-	public static void analyzeAudience(ArrayList<String> _audience) {
+	public void analyzeAudience(ArrayList<String> _audience) {
 		size.add("normal");
 		font.add("Homenaje");
 		font.add("Poiret One");
@@ -59,7 +59,7 @@ public class StartUp {
 		}
 	}
 	
-	public static void analyzeCategoryAndWords(ArrayList<String> _category, ArrayList<String> _words) {
+	public void analyzeCategoryAndWords(ArrayList<String> _category, ArrayList<String> _words) {
 		
 		if(_category.contains("Travel")) {
 			// add fonts
@@ -315,7 +315,7 @@ public class StartUp {
 		}
 	}
 	
-	public static Logo generate() {
+	public Logo generate() {
 		
 		// pick font
 		int font_ = (int) (Math.random() * font.size());
