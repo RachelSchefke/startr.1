@@ -2,9 +2,10 @@ package startr;
 
 import static spark.Spark.*;
 
+import java.util.ArrayList;
 import java.util.List;
-
 import com.google.gson.Gson;
+import startr.StartUp.Logo;
 
 public class Servlet implements spark.servlet.SparkApplication {
 
@@ -30,8 +31,13 @@ public class Servlet implements spark.servlet.SparkApplication {
 			
 			StartUp start = new StartUp(target, category, keywords);
 			
+			List<Logo> result = new ArrayList<Logo>();
 			
-			return fd;
+			for(int i = 0; i < 3; i++) {
+				result.add(start.generate());
+			}
+			
+			return result;
 		}, gson::toJson);
 	}
 
