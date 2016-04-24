@@ -179,7 +179,7 @@ public class StartUp {
 		
 		if(_category.contains("Finance")) {
 			// add fonts
-			font.add("Cinzel");
+			font.add("Cinzel Decorative");
 			font.add("Trocchi");
 			
 			// images
