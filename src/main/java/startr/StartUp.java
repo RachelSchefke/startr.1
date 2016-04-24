@@ -88,6 +88,7 @@ public class StartUp {
 				words.add("vacation");
 				words.add("travel");
 				words.add("explore");
+				words.add("adventure");
 			}
 			
 		}
@@ -135,6 +136,8 @@ public class StartUp {
 				words.add("connect");
 				words.add("talk");
 				words.add("vibe");
+				words.add("chat");
+				words.add("friends");
 			}
 			if(_words.contains("Professional")) {
 				words.add("link");
@@ -158,7 +161,7 @@ public class StartUp {
 			
 			// keywords
 			if(_words.contains("Note")) {
-				image.add("check.png");
+				image.add("note.png");
 				words.add("note");
 				words.add("write");
 				words.add("reminder");
@@ -168,12 +171,14 @@ public class StartUp {
 				words.add("list");
 				words.add("check");
 				words.add("todo");
+				words.add("organize");
 			}
 			if(_words.contains("Calendar")) {
 				image.add("cal.png");
 				words.add("calendar");
 				words.add("time");
 				words.add("schedule");
+				words.add("agenda");
 			}
 		}
 		
@@ -197,11 +202,15 @@ public class StartUp {
 			if(_words.contains("Investments")) {
 				words.add("trade");
 				words.add("invest");
+				words.add("securities");
+				words.add("futures");
+				words.add("stocks");
 			}
 			if(_words.contains("Budget")) {
 				words.add("save");
 				words.add("budget");
 				words.add("smart");
+				words.add("plan");
 			}
 		}
 		
@@ -223,12 +232,14 @@ public class StartUp {
 				words.add("style");
 				words.add("fashion");
 				words.add("runway");
+				words.add("outfit");
 			}
 			if(_words.contains("Home Goods")) {
 				words.add("remodel");
 				words.add("interior");
 				words.add("decorate");
 				words.add("home");
+				words.add("design");
 			}
 			if(_words.contains("Electronics")) {
 				words.add("gadget");
@@ -249,7 +260,7 @@ public class StartUp {
 				words.add("radio");
 				words.add("song");
 				words.add("music");
-				words.add("tune");
+				words.add("tunes");
 				words.add("beat");
 				words.add("rhythm");
 			}
@@ -298,6 +309,7 @@ public class StartUp {
 				words.add("word");
 				words.add("dictionary");
 				words.add("define");
+				words.add("book");
 			}
 		}
 	}
