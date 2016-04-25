@@ -35,6 +35,9 @@ public class Servlet extends spark.servlet.SparkFilter implements spark.servlet.
 			corsHeaders.forEach((key, value) -> {
                 response.header(key, value);
             });
+			if(request.requestMethod().equals("OPTIONS")) {
+				halt(200);
+			}
 		});
 		
 		get("/", (req, res) -> {
