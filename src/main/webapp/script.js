@@ -72,7 +72,7 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
     $scope.category = angular.copy(default_category);
     $scope.keywords = angular.copy(default_keywords);
     $scope.comments = "";
-    $scope.SelectedLogo = 0;
+    $scope.SelectedLogo = -1;
 
     $scope.completed = function (obj) {
         var keys = Object.keys(obj);

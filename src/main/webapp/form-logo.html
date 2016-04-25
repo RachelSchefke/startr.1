@@ -8,8 +8,8 @@
           <md-icon md-svg-icon="{{it.id}}"></md-icon>
       </md-radio-button>
     </md-radio-group> -->
-    <input type="radio" name="logo" ng-value="{{$index}}" ng-model="SelectedLogo">
-    <label for "logo">
+    <input type="radio" name="logo" value="{{$index}}" ng-model="$parent.SelectedLogo">
+    <label for="logo">
     	<p><img ng-src="/images/{{logo._image}}" class="logo">
     		<span ng-style="styles[$index]" id="texter">{{logo._title}}</span>
     	</p>
