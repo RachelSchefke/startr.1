@@ -130,7 +130,6 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 
     //function to process the form
     $scope.processForm = function() {
-        var errorlogo = "";
 
     };
 

@@ -1,6 +1,6 @@
 /* BASIC STYLINGS
 ============================================================================= */
-body                            { padding-top:20px; background-color: #98edc9; font-family: 'Raleway', sans-serif; color:#000000;}
+body                            { padding-top:20px; background-color: #b0ded3; font-family: 'Raleway', sans-serif; color:#000000;}
 pre                             { margin-bottom:20px; }
 textarea {
     resize: vertical;
@@ -17,13 +17,13 @@ textarea {
 
 /* numbered buttons */
 #status-buttons                 {  }
-#status-buttons a               { color:#000000; font-family: 'Raleway', sans-serif; display:inline-block; font-size:12px; margin-right:10px; text-align:center; text-transform:uppercase; }
-#status-buttons a:hover         { }
-#status-buttons span            { background:#c6c6c6; display:block; height:30px; margin:0 auto 10px; padding-top:5px; width:30px; 
+#status-buttons span               { color:#000000; font-family: 'Raleway', sans-serif; display:inline-block; font-size:12px; margin-right:10px; text-align:center; text-transform:uppercase; }
+#status-buttons span:hover         { }
+#status-buttons span span            { background:#c6c6c6; display:block; height:30px; margin:0 auto 10px; padding-top:5px; width:30px; 
     border-radius:50%; }
 
 /* active buttons */
-#status-buttons a.active span   { background:#98edc9; }
+#status-buttons span.active span   { background:#b0ded3; }
 
 .btn-default, .btn-primary					{ 
 												background:#c6c6c6; 
@@ -31,7 +31,7 @@ textarea {
 												text-transform: uppercase;
 												font-family: 'Raleway', sans-serif;
 											}
-.btn-default:hover, .btn-primary:hover		{ background:#98edc9; border:solid #98edc9;}
+.btn-default:hover, .btn-primary:hover		{ background:#b0ded3; border:solid #b0ded3;}
 
 .btn-default-text, .btn-primary-text		{ color:#000000 !important;}
 
