@@ -93,3 +93,7 @@ textarea {
 #startrlogo {
 	width: 100%;
 }
+
+#texter {
+	word-wrap: break-word;
+}
