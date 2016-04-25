@@ -359,12 +359,10 @@ public class StartUp {
 			String s = words.get(word1);
 			String s2 = words.get(word2);
 			if(s.contains("i")) {
-				s.replace('i','y');
-				title = s;
+				title = s.replace('i','y');
 			}
 			else if (s2.contains("i")){
-				s.replace('i','y');
-				title = s;
+				title = s.replace('i','y');
 			}
 			else {
 				// put text in the beginning
