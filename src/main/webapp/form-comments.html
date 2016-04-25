@@ -1,11 +1,11 @@
 <label>Tell us about your startup's vision</label>
 <div class="form-group">
-    <textarea type="text" class="form-control" name="comments" ng-model="comments"></textarea>
+    <textarea type="text" class="form-control" name="comments" ng-model="$parent.comments"></textarea>
 </div>
 
 <div class="form-group row">
 <div class="col-xs-6 col-xs-offset-3">
-    <a class="btn btn-block btn-default" ng-show="comments.length > 0" ng-click="getLogo()">
+    <a class="btn btn-block btn-default" ng-show="$parent.comments.length > 0" ng-click="getLogo()">
     Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
     </a>
 </div>
