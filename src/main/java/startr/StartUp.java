@@ -372,7 +372,7 @@ public class StartUp {
 		int image_ = (int) (Math.random() * image.size());
 		
 		// choice
-		int random = (int) (Math.random() * 3);
+		int random = (int) (Math.random() * 4);
 		System.out.println(random);
 		
 		int word1 = (int) (Math.random() * words.size());
@@ -421,6 +421,25 @@ public class StartUp {
 			else {
 				// dot
 				title = words.get(word1) + "." + words.get(word2);
+			}
+		}
+		else {
+			// terminal s -> z
+			// word manipulation
+			String s = words.get(word1);
+			String s2 = words.get(word2);
+			if(s.contains("s") && s.indexOf('s') == s.length() - 1) {
+				title = s.substring(0, s.length() - 1);
+				title += 'z';
+			}
+			else if (s2.contains("s") && s2.indexOf('s') == s2.length() - 1) {
+				title = s2.substring(0, s2.length() - 1);
+				title += 'z';
+			}
+			else {
+				String [] endings = {"ster", "ify", ".it", ".io", "ly", ".me", "fy", "bit"};
+				int end = (int) (Math.random() * endings.length);
+				title = words.get(word1) + endings[end];
 			}
 		}
 		
