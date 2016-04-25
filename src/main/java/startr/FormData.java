@@ -10,7 +10,13 @@ public class FormData {
 	public Map<String, Boolean> target;
 	public Map<String, Boolean> category;
 	public Map<String, Boolean> keywords;
-	String comments;
+	public String comments;
+	
+	public static final Map<String, String> map;
+	static {
+		map = new HashMap<String, String>();
+		//map.put();
+	}
 	
 	public List<String> getTarget() {
 		
