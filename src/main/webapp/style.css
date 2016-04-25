@@ -5,7 +5,17 @@ pre                             { margin-bottom:20px; }
 textarea {
     resize: vertical;
 }
-
+.logo-wrapper {
+	padding: 10px 15px;
+	border: 2px transparent solid;
+	display: inline-block;
+}
+.logo-wrapper > *:last-child {
+	margin-bottom:0;
+}
+.logo-wrapper.active {
+	border-color: #666;
+}
 
 .logo 							{ height: 70px; }
 

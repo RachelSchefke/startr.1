@@ -1,10 +1,13 @@
-<center><h1>Your startup summary</h1></center>
+<center><h1>Your startup summary</h1>
 
     <label for="logo">
-    	<p><img ng-src="/images/{{logo._image}}" class="logo">
-    		<span ng-style="styles[$index]" id="texter">{{logo._title}}</span>
+    	<p><img ng-src="/images/{{serverResponse[SelectedLogo]._image}}" class="logo">
+    		<span ng-style="styles[SelectedLogo]" id="texter">{{serverResponse[SelectedLogo]._title}}</span>
     	</p>
     </label>
+
+    <p>{{ serverAnalysis }}</p>
+</center>
 
 <div class="form-group row">
 <div class="col-xs-6 col-xs-offset-3">
