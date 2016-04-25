@@ -2,6 +2,7 @@ package startr;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -58,20 +59,39 @@ public class FormData {
 		
 		List<String> list =  target.entrySet().stream().filter(e->e.getValue()).map(e -> e.getKey()).collect(Collectors.toList());
 	
+		ListIterator<String> iter = (ListIterator<String>) list.iterator();
+		
+		if(iter.hasNext()) {
+			String str = iter.next();
+			iter.set(map.get(str));
+		}
+		
 		return list;
 	}
 	
 	public List<String> getCategory() {
 		
 		List<String> list =  category.entrySet().stream().filter(e->e.getValue()).map(e -> e.getKey()).collect(Collectors.toList());
-	
+
+		ListIterator<String> iter = (ListIterator<String>) list.iterator();
+		
+		if(iter.hasNext()) {
+			String str = iter.next();
+			iter.set(map.get(str));
+		}
 		return list;
 	}
 	
 	public List<String> getKeywords() {
 		
 		List<String> list =  keywords.entrySet().stream().filter(e->e.getValue()).map(e -> e.getKey()).collect(Collectors.toList());
-	
+
+		ListIterator<String> iter = (ListIterator<String>) list.iterator();
+		
+		if(iter.hasNext()) {
+			String str = iter.next();
+			iter.set(map.get(str));
+		}
 		return list;
 	}
 }
