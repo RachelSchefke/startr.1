@@ -1,12 +1,5 @@
 package startr;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
-import java.net.URL;
-import java.net.URLConnection;
-
 import com.google.gson.Gson;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
@@ -40,6 +33,9 @@ public class CommentAnalyzer {
 
 		try {
 			res = doHTTP(text).getBody();
+			
+			System.out.println(text.toString());
+			
 			score = res.getObject()
 					.getJSONObject("document_tone")
 					.getJSONArray("tone_categories")
