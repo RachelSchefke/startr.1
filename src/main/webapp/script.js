@@ -107,7 +107,8 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
             //     $scope.errorlogo = data.errors.logo;
             // }
             // else {
-                $scope.serverResponse = data;
+                $scope.serverResponse = data.results;
+                $scope.serverAnalysis = data.analysis;
 
                 $scope.styles = $scope.serverResponse.map(function (value) {
                     var sizes = {
