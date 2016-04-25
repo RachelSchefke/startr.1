@@ -57,41 +57,19 @@ public class FormData {
 	
 	public List<String> getTarget() {
 		
-		List<String> list =  target.entrySet().stream().filter(e->e.getValue()).map(e -> e.getKey()).collect(Collectors.toList());
+		return target.entrySet().stream().filter(e->e.getValue()).map(e -> map.get(e.getKey())).collect(Collectors.toList());
 	
-		ListIterator<String> iter = (ListIterator<String>) list.iterator();
-		
-		if(iter.hasNext()) {
-			String str = iter.next();
-			iter.set(map.get(str));
-		}
-		
-		return list;
 	}
 	
 	public List<String> getCategory() {
 		
-		List<String> list =  category.entrySet().stream().filter(e->e.getValue()).map(e -> e.getKey()).collect(Collectors.toList());
+		return category.entrySet().stream().filter(e->e.getValue()).map(e -> map.get(e.getKey())).collect(Collectors.toList());
 
-		ListIterator<String> iter = (ListIterator<String>) list.iterator();
-		
-		if(iter.hasNext()) {
-			String str = iter.next();
-			iter.set(map.get(str));
-		}
-		return list;
 	}
 	
 	public List<String> getKeywords() {
 		
-		List<String> list =  keywords.entrySet().stream().filter(e->e.getValue()).map(e -> e.getKey()).collect(Collectors.toList());
+		return  keywords.entrySet().stream().filter(e->e.getValue()).map(e -> map.get(e.getKey())).collect(Collectors.toList());
 
-		ListIterator<String> iter = (ListIterator<String>) list.iterator();
-		
-		if(iter.hasNext()) {
-			String str = iter.next();
-			iter.set(map.get(str));
-		}
-		return list;
 	}
 }
