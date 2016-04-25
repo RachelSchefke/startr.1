@@ -34,7 +34,7 @@ public class CommentAnalyzer {
 		try {
 			res = doHTTP(text).getBody();
 			
-			System.out.println(text.toString());
+			System.out.println(res.toString());
 			
 			score = res.getObject()
 					.getJSONObject("document_tone")
