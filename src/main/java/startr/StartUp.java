@@ -77,11 +77,14 @@ public class StartUp {
 				words.add("route");
 				words.add("fly");
 				words.add("zoom");
+				image.add("car.png");
 			}
 			if(_words.contains("Lodging")) {
 				words.add("stay");
 				words.add("sleep");
 				words.add("home");
+				words.add("hotel");
+				image.add("sleep.png");
 			}
 			if(_words.contains("Attractions")) {
 				words.add("trip");
@@ -89,6 +92,9 @@ public class StartUp {
 				words.add("travel");
 				words.add("explore");
 				words.add("adventure");
+				words.add("navigation");
+				words.add("compass");
+				image.add("compass.png");
 			}
 			
 		}
@@ -106,18 +112,24 @@ public class StartUp {
 				words.add("miles");
 				words.add("run");
 				words.add("step");
+				words.add("athlete");
+				words.add("sprint");
 			}
 			if(_words.contains("Diet")) {
 				words.add("weight");
 				words.add("health");
 				words.add("heart");
 				words.add("food");
+				words.add("fit");
 			}
 			if(_words.contains("Workout")) {
 				words.add("sweat");
 				words.add("burn");
 				words.add("power");
 				words.add("workout");
+				words.add("fit");
+				words.add("go");
+				image.add("lift.png");
 			}
 		}
 		
@@ -129,8 +141,11 @@ public class StartUp {
 			// images
 			image.add("speechbubble.png");
 			image.add("people.png");
+			image.add("share.png");
 			
 			// keywords
+			words.add("social");
+			words.add("message");
 			
 			if(_words.contains("Chat")) {
 				words.add("connect");
@@ -143,15 +158,21 @@ public class StartUp {
 				words.add("link");
 				words.add("job");
 				words.add("work");
+				words.add("apply");
+				
+				image.add("briefcase.png");
 			}
 			if(_words.contains("Dating")) {
 				image.add("heart.png");
+				image.add("love.png");
+				image.add("bird.png");
 				
 				words.add("match");
 				words.add("chat");
 				words.add("love");
 				words.add("crush");
 				words.add("date");
+				words.add("harmony");
 			}
 		}
 		
@@ -165,6 +186,7 @@ public class StartUp {
 				words.add("note");
 				words.add("write");
 				words.add("reminder");
+				words.add("words");
 			}
 			if(_words.contains("List")) {
 				image.add("check.png");
@@ -172,6 +194,7 @@ public class StartUp {
 				words.add("check");
 				words.add("todo");
 				words.add("organize");
+				words.add("box");
 			}
 			if(_words.contains("Calendar")) {
 				image.add("cal.png");
@@ -190,6 +213,7 @@ public class StartUp {
 			// images
 			image.add("money.png");
 			image.add("piggy.png");
+			image.add("coins.png");
 			
 			// keywords
 			
@@ -205,6 +229,7 @@ public class StartUp {
 				words.add("securities");
 				words.add("futures");
 				words.add("stocks");
+				image.add("graph.png");
 			}
 			if(_words.contains("Budget")) {
 				words.add("save");
@@ -221,7 +246,6 @@ public class StartUp {
 			
 			// images
 			image.add("cart.png");
-			image.add("purse.png");
 			
 			// keywords
 			words.add("shop");
@@ -233,6 +257,8 @@ public class StartUp {
 				words.add("fashion");
 				words.add("runway");
 				words.add("outfit");
+				image.add("hanger.png");
+				image.add("purse.png");
 			}
 			if(_words.contains("Home Goods")) {
 				words.add("remodel");
@@ -240,11 +266,13 @@ public class StartUp {
 				words.add("decorate");
 				words.add("home");
 				words.add("design");
+				image.add("home.png");
 			}
 			if(_words.contains("Electronics")) {
 				words.add("gadget");
 				words.add("device");
 				words.add("tech");
+				image.add("gear");
 			}
 		}
 		
@@ -266,6 +294,7 @@ public class StartUp {
 			}
 			if(_words.contains("Videos")) {
 				image.add("tv.png");
+				image.add("film.png");
 				words.add("stream");
 				words.add("watch");
 				words.add("flick");
@@ -273,6 +302,7 @@ public class StartUp {
 			}
 			if(_words.contains("Photos")) {
 				image.add("camera.png");
+				image.add("poloroid.png");
 				words.add("collage");
 				words.add("pic");
 				words.add("photo");
@@ -304,12 +334,14 @@ public class StartUp {
 				words.add("learn");
 				words.add("brain");
 				words.add("school");
+				image.add("learn.png");
 			}
 			if(_words.contains("Reference")) {
 				words.add("word");
 				words.add("dictionary");
 				words.add("define");
 				words.add("book");
+				image.add("ref.png");
 			}
 		}
 	}
@@ -345,6 +377,10 @@ public class StartUp {
 		
 		int word1 = (int) (Math.random() * words.size());
 		int word2 = (int) (Math.random() * words.size());
+		
+		while(word1 == word2) {
+			word2 = (int) (Math.random() * words.size());
+		}
 		
 		String title = "";
 		
