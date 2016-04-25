@@ -28,6 +28,16 @@ public class Servlet extends spark.servlet.SparkFilter implements spark.servlet.
         corsHeaders.put("Access-Control-Allow-Credentials", "true");
     }
     
+    public static class Result {
+    	List<Logo> results;
+    	String analysis;
+    	
+    	public Result(List<Logo> results, String analysis) {
+    		this.results = results;
+    		this.analysis = analysis;
+    	}
+    }
+    
 	@Override
 	public void init() {
 		
@@ -60,11 +70,14 @@ public class Servlet extends spark.servlet.SparkFilter implements spark.servlet.
 			
 			StartUp start = new StartUp(target, category, keywords);
 			
-			List<Logo> result = new ArrayList<Logo>();
+			List<Logo> list = new ArrayList<Logo>();
 			
 			for(int i = 0; i < 3; i++) {
-				result.add(start.generate());
+				list.add(start.generate());
 			}
+			
+			CommentAnalyzer ca = new CommentAnalyzer(fd.comments);
+			Result result = new Result(list, ca.analyze());
 			
 			return result;
 		}, gson::toJson);
