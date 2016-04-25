@@ -55,12 +55,12 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 
 // our controller for the form
 // =============================================================================
-.controller('formController', function($scope) {
+.controller('formController', function($scope, $http) {
     
     // we will store all of our form data in this object
     $scope.audience = {"kids":false,"teens":false,"adults":false,"elderly":false};
     $scope.category = {"travel":false,"fitness":false,"social":false,"productivity":false,"media":false,"finance":false,"shopping":false,"education":false};
-    $scope.keywords = {"trasportation":false,"lodging":false,"attractions":false,"running":false,"diet":false,"workout":false,"chat":false,"professional":false,"dating":false,"note":false,"list":false,"calendar":false,"banking":false,"investments":false,"budge":false,"clothing":false,"home":false,"electronics":false,"music":false,"video":false,"photo":false,"study":false,"learn":false,"reference":false};
+    $scope.keywords = {"transportation":false,"lodging":false,"attractions":false,"running":false,"diet":false,"workout":false,"chat":false,"professional":false,"dating":false,"note":false,"list":false,"calendar":false,"banking":false,"investments":false,"budget":false,"clothing":false,"home":false,"electronics":false,"music":false,"video":false,"photo":false,"study":false,"learn":false,"reference":false};
     $scope.comments = "";
     $scope.SelectedLogo = 0;
 
@@ -73,36 +73,45 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
         }).length > 0;
     };
 
-    $scope.nothing = function () {
-
-    };
-
-    // function to process the form
+    //function to process the form
     $scope.processForm = function() {
-        alert('Submitted');  
+        var errorlogo = "";
+
+        $http({
+            method  : 'POST',
+            url     : 'http://startr.mybluemix.net/processData',
+            data    : {
+                "target"   : $scope.audience,
+                "category" : $scope.category, 
+                "keywords" : $scope.keywords, 
+                "comments" : $scope.comments }
+        })
+        .success(function(data) {
+            console.log(data);
+
+            // if (!data.success) {
+            //     $scope.errorlogo = data.errors.logo;
+            // }
+            // else {
+                $scope.serverResponse = data;
+
+                $scope.styles = $scope.serverResponse.map(function (value) {
+                    var sizes = {
+                        "small": 30,
+                        "normal": 40,
+                        "big": 60
+                    };
+
+                    return {
+                        "font-family" : value._font,
+                        "font-size" : sizes[value._size] + "px"
+                    };
+                }); 
+            // }
+        }); 
+
+        
     };
 
-    $scope.serverResponse = [
-    {
-        "_font": "Chewy",
-        "_size": "big",
-        "_image": "map.png",
-        "_title": "startr"
-    }
-    ];
-
-    $scope.styles = $scope.serverResponse.map(function (value) {
-        var sizes = {
-            "small": 30,
-            "normal": 40,
-            "big": 60
-        };
-
-        return {
-            "font-family" : value._font,
-            "font-size" : sizes[value._size] + "px"
-        };
-    });
-    
 });
 

@@ -2,6 +2,9 @@
 ============================================================================= */
 body                            { padding-top:20px; background-color: #98edc9; font-family: 'Raleway', sans-serif; color:#000000;}
 pre                             { margin-bottom:20px; }
+textarea {
+    resize: vertical;
+}
 
 
 .logo 							{ height: 70px; }
