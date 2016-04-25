@@ -46,6 +46,12 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
         .state('form.logo', {
             url: '/logo',
             templateUrl: 'form-logo.html'
+        })
+
+        // url will be /form/comments
+        .state('form.summary', {
+            url: '/summary',
+            templateUrl: 'form-summary.html'
         });
        
     // catch all route
@@ -55,12 +61,16 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 
 // our controller for the form
 // =============================================================================
-.controller('formController', function($scope, $http) {
+.controller('formController', function($scope, $http, $state) {
     
+    var default_audience = {"kids":false,"teens":false,"adults":false,"elderly":false};
+    var default_category = {"travel":false,"fitness":false,"social":false,"productivity":false,"media":false,"finance":false,"shopping":false,"education":false};
+    var default_keywords = {"transportation":false,"lodging":false,"attractions":false,"running":false,"diet":false,"workout":false,"chat":false,"professional":false,"dating":false,"note":false,"list":false,"calendar":false,"banking":false,"investments":false,"budget":false,"clothing":false,"home":false,"electronics":false,"music":false,"video":false,"photo":false,"study":false,"learn":false,"reference":false};
+
     // we will store all of our form data in this object
-    $scope.audience = {"kids":false,"teens":false,"adults":false,"elderly":false};
-    $scope.category = {"travel":false,"fitness":false,"social":false,"productivity":false,"media":false,"finance":false,"shopping":false,"education":false};
-    $scope.keywords = {"transportation":false,"lodging":false,"attractions":false,"running":false,"diet":false,"workout":false,"chat":false,"professional":false,"dating":false,"note":false,"list":false,"calendar":false,"banking":false,"investments":false,"budget":false,"clothing":false,"home":false,"electronics":false,"music":false,"video":false,"photo":false,"study":false,"learn":false,"reference":false};
+    $scope.audience = angular.copy(default_audience);
+    $scope.category = angular.copy(default_category);
+    $scope.keywords = angular.copy(default_keywords);
     $scope.comments = "";
     $scope.SelectedLogo = 0;
 
@@ -73,10 +83,14 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
         }).length > 0;
     };
 
-    //function to process the form
-    $scope.processForm = function() {
-        var errorlogo = "";
+    $scope.startOver = function() {
+        $scope.audience = angular.copy(default_audience);
+        $scope.category = angular.copy(default_category);
+        $scope.keywords = angular.copy(default_keywords);
+        $scope.comments = "";
+    }
 
+    $scope.getLogo = function() {
         $http({
             method  : 'POST',
             url     : 'http://startr.mybluemix.net/processData',
@@ -107,10 +121,17 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
                         "font-size" : sizes[value._size] + "px"
                     };
                 }); 
+
+                $state.go('form.logo')
+
             // }
         }); 
+    }
 
-        
+    //function to process the form
+    $scope.processForm = function() {
+        var errorlogo = "";
+
     };
 
 });
