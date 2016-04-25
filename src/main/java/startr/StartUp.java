@@ -272,7 +272,7 @@ public class StartUp {
 				words.add("gadget");
 				words.add("device");
 				words.add("tech");
-				image.add("gear");
+				image.add("gear.png");
 			}
 		}
 		
@@ -386,7 +386,7 @@ public class StartUp {
 		
 		if(random == 0) {
 			// ending word
-			String [] endings = {"ster", "ify", ".it", ".io", "ly", ".me", "fy", "bit"};
+			String [] endings = {"ster", "ify", ".it", ".io", "ly", ".me", "ify", "bit", "ware", "span", "o", "wire", "bee", "dog"};
 			int end = (int) (Math.random() * endings.length);
 			title = words.get(word1) + endings[end];
 		}
@@ -398,7 +398,7 @@ public class StartUp {
 				title = s.replace('i','y');
 			}
 			else if (s2.contains("i")){
-				title = s.replace('i','y');
+				title = s2.replace('i','y');
 			}
 			else {
 				// put text in the beginning
@@ -437,7 +437,7 @@ public class StartUp {
 				title += 'z';
 			}
 			else {
-				String [] endings = {"ster", "ify", ".it", ".io", "ly", ".me", "fy", "bit"};
+				String [] endings = {"ster", "ify", ".it", ".io", "ly", ".me", "ify", "bit", "ware", "span", "o", "wire", "bee", "dog"};
 				int end = (int) (Math.random() * endings.length);
 				title = words.get(word1) + endings[end];
 			}
