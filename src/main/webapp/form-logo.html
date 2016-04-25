@@ -20,7 +20,7 @@
 <div class="form-group row">
 <div class="col-xs-6 col-xs-offset-3">
     <button type="regenerate" class="btn btn-default pull-left" ng-click="getLogo()">Regenerate</button>
-    <a ui-sref="form.summary" class="btn btn-default pull-right" >
+    <a ui-sref="form.summary" class="btn btn-default pull-right" ng-show="$parent.SelectedLogo != -1">
     Submit <span class="glyphicon glyphicon-circle-arrow-right"></span>
     </a>
 </div>
